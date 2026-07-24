@@ -1,4 +1,5 @@
 import UploadCard from "@/components/UploadCard";
+import RecentProjects from "@/components/project/RecentProjects";
 
 export default function Workspace() {
   return (
@@ -7,11 +8,13 @@ export default function Workspace() {
         Welcome back, Creator 👋
       </h1>
 
-      <p className="mt-3 text-gray-400">
+      <p className="mt-3 text-slate-400">
         Upload your next video and let AI do the hard work.
       </p>
 
       <UploadCard />
+
+      <RecentProjects />
     </main>
   );
 }
