@@ -1,21 +1,20 @@
-import UploadCard from "@/components/UploadCard";
 import Navbar from "@/components/Navbar";
+import Sidebar from "@/components/Sidebar";
+import Workspace from "@/components/Workspace";
+import RightPanel from "@/components/RightPanel";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0B0F19] text-white">
       <Navbar />
 
-      <section className="mx-auto max-w-7xl px-6 py-12">
-        <h2 className="text-4xl font-bold">
-          Welcome back, Creator 👋
-        </h2>
+      <div className="flex h-[calc(100vh-64px)]">
+        <Sidebar />
 
-        <p className="mt-3 text-lg text-gray-400">
-          Upload your next video and let AI handle the editing.
-        </p>
-        <UploadCard />
-      </section>
+        <Workspace />
+
+        <RightPanel />
+      </div>
     </main>
   );
 }
