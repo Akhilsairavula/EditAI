@@ -1,18 +1,28 @@
+"use client";
+
 import { Play, Clock, HardDrive } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 type ProjectCardProps = {
+  id: string;
   title: string;
   size: string;
   updated: string;
 };
 
 export default function ProjectCard({
+  id,
   title,
   size,
   updated,
 }: ProjectCardProps) {
+  const router = useRouter();
+
   return (
-    <div className="group cursor-pointer rounded-2xl border border-slate-800 bg-slate-900 p-5 transition-all duration-300 hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/10">
+    <div
+      onClick={() => router.push(`/editor/${id}`)}
+      className="group cursor-pointer rounded-2xl border border-slate-800 bg-slate-900 p-5 transition-all duration-300 hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/10"
+    >
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-4">
           <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-blue-600/20">

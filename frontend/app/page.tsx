@@ -5,14 +5,12 @@ import RightPanel from "@/components/RightPanel";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0B0F19] text-white">
+    <main className="flex h-screen flex-col bg-[#0b1120]">
       <Navbar />
 
-      <div className="flex h-[calc(100vh-64px)]">
+      <div className="flex flex-1 overflow-hidden">
         <Sidebar />
-
         <Workspace />
-
         <RightPanel />
       </div>
     </main>

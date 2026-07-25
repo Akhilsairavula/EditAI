@@ -1,20 +1,28 @@
-import UploadCard from "@/components/UploadCard";
-import RecentProjects from "@/components/project/RecentProjects";
+"use client";
+
+import UploadCard from "./UploadCard";
+import RecentProjects from "./project/RecentProjects";
+import { useProjectStore } from "@/store/projectStore";
 
 export default function Workspace() {
+  const projects = useProjectStore((state) => state.projects);
+  const addProject = useProjectStore((state) => state.addProject);
+
   return (
     <main className="flex-1 overflow-y-auto p-8">
-      <h1 className="text-4xl font-bold text-white">
-        Welcome back, Creator 👋
-      </h1>
+      <div className="mx-auto max-w-6xl">
+        <h1 className="mb-2 text-4xl font-bold text-white">
+          Welcome to EditAI 👋
+        </h1>
 
-      <p className="mt-3 text-slate-400">
-        Upload your next video and let AI do the hard work.
-      </p>
+        <p className="mb-8 text-slate-400">
+          Upload a video to create a new project.
+        </p>
 
-      <UploadCard />
+        <UploadCard onUpload={addProject} />
 
-      <RecentProjects />
+        <RecentProjects projects={projects} />
+      </div>
     </main>
   );
 }
